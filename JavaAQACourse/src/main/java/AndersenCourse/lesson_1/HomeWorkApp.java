@@ -1,4 +1,4 @@
-package AndersenCourse.Lesson_1;
+package AndersenCourse.lesson_1;
 
 public class HomeWorkApp {
     public static void printThreeWords() {
@@ -8,7 +8,7 @@ public class HomeWorkApp {
     }
     public static void checkSumSign() {
         int a = 5;
-        int b = -15;
+        int b = -6;
         if (a + b >= 0) {
             System.out.println("Сумма положительная");
         }
