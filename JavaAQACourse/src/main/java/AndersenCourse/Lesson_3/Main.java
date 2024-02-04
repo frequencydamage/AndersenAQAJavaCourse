@@ -18,7 +18,6 @@ public class Main {
                 "antonchik@gmail.com", "777-375-928", 9000, 45);
         employeeArray[4] = new Employee("Dmitriev Anton Valeryevich", "Sales Manager",
                 "dmitriev.sales@gmail.com", "725-983-654", 5500, 28);
-        //
         for (Employee employee : employeeArray) {
             if (employee.age > 40) {
                 employee.getEmployeeInfo(employee);
