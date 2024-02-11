@@ -17,7 +17,7 @@ public class ArraySwapClass {
             array[firstIndex] = array[secondIndex];
             array[secondIndex] = saveValue;
         } else {
-            System.out.println("Can't solve the problem!");
+            System.out.println("Can't solve the problem!!!");
         }
     }
 }
