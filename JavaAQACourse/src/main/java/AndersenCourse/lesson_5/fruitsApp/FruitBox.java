@@ -4,30 +4,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FruitBox<T extends Fruits> {
-    private float emptyBoxWeight = 0f;
     private List<T> fruitBox = new ArrayList<>();
 
     public void addFruits(T fruit, int amount) {
-        if (amount > 0) {
-            for (int i = 0; i < amount; i++) {
-                fruitBox.add(fruit);
+        if (fruitBox.isEmpty() || (fruitBox.getFirst().getClass().isInstance(fruit))) {
+            if (amount > 0) {
+                for (int i = 0; i < amount; i++) {
+                    fruitBox.add(fruit);
+                }
+                System.out.println("You've successfully added " + amount + " fruits!");
+            } else {
+                System.out.println("You can not add nothing!");
             }
-            System.out.println("You've succesfully added " + amount + " fruits!");
         } else {
-            System.out.println("You can not add nothing!");
+            System.out.println("You can not add different type of fruits to this box!");
         }
     }
 
+
     public float getWeight() {
-        if (fruitBox.size() != 0) {
-            return fruitBox.size() * fruitBox.get(0).getFruitWeight();
+        if (!fruitBox.isEmpty()) {
+            return fruitBox.size() * fruitBox.getFirst().getFruitWeight();
         } else {
-            return emptyBoxWeight;
+            return 0f;
         }
     }
 
     public void compareWeights(FruitBox<?> box) {
-        if (this.getWeight() > box.getWeight()) {
+        if (this.getWeight() != box.getWeight()) {
             System.out.println("false");
         } else {
             System.out.println("true");
@@ -38,9 +42,11 @@ public class FruitBox<T extends Fruits> {
         if (newBox.fruitBox.isEmpty()) {
             newBox.fruitBox.addAll(fruitBox);
             fruitBox.clear();
-            System.out.println("You've successfully moved fruits to the other box!");
-        } else if (!newBox.fruitBox.isEmpty()) {
-            System.out.println("The box you are trying to move the fruits into is not empty!");
+            System.out.println("You've successfully moved fruits to another box!");
+        } else if (fruitBox.getFirst().getClass() != newBox.fruitBox.getFirst().getClass()) {
+            System.out.println("You can not move fruits to a box that contains different kinds of fruits!");
+        } else {
+            System.out.println("This box is not empty!");
         }
     }
 }
