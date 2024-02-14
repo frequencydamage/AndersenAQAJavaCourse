@@ -11,7 +11,7 @@ public class MyArrayDataException extends Exception {
 
     @Override
     public String getMessage() {
-        return "Can not parse element index: [" + arrayIndex + "] in line: [" + arrayLine + "]";
+        return "Can not parse element index: [" + arrayIndex + "] in line: [" + arrayLine + "]!";
     }
 }
 
