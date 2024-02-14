@@ -2,6 +2,7 @@ package AndersenCourse.lesson_5.arraySwap;
 
 public class ArraySwapClass {
     public static void main(String[] args) {
+        //Task - Написать метод, который меняет два элемента массива местами (массив может быть любого ссылочного типа);
         int[] myArray = {5, 15, 4, -32, 146, -9, 55, 66};
 
         swap(myArray, 2, 6);
