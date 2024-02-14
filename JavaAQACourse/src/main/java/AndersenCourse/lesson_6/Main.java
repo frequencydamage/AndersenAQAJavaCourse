@@ -13,31 +13,13 @@ public class Main {
                 {"-5", "28", "33", "45"},
                 {"-8", "3", "5", "4"},
                 {"2", "15", "55", "3"},
-                {"-156", "54", "*", "22"}
+                {"-156", "54", "&", "22"}
         };
 
         try {
-            System.out.println(arrayElementSum(myArray));
+            System.out.println(ArrayChecker.arrayElementSum(myArray));
         } catch (MyArraySizeException | MyArrayDataException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    static int arrayElementSum(String[][] array) throws MyArraySizeException, MyArrayDataException {
-        if (array.length != 4 || array[0].length != 4) {
-            throw new MyArraySizeException();
-        }
-        int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                try {
-                    int value = Integer.parseInt(array[i][j]);
-                    sum += value;
-                } catch (NumberFormatException e) {
-                    throw new MyArrayDataException(i, j);
-                }
-            }
-        }
-        return sum;
     }
 }
