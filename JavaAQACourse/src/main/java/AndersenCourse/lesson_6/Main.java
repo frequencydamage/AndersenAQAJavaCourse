@@ -10,14 +10,14 @@ public class Main {
     //и MyArrayDataException и вывести результат расчета.
     public static void main(String[] args) {
         String[][] myArray = {
-                {"-5", "28", "33", "45"},
+                {"-5", "28", "3", "45"},
                 {"-8", "3", "5", "4"},
-                {"2", "15", "55", "3"},
-                {"-156", "54", "&", "22"}
+                {"2", "15", "44", "3"},
+                {"-156", "54", "3", "22"}
         };
 
         try {
-            System.out.println(ArrayChecker.arrayElementSum(myArray));
+            System.out.println("Sum of array elements is: " + ArrayManipulator.arrayElementSum(myArray));
         } catch (MyArraySizeException | MyArrayDataException e) {
             System.out.println(e.getMessage());
         }
