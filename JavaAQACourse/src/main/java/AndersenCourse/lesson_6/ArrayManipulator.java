@@ -1,12 +1,14 @@
 package AndersenCourse.lesson_6;
 
-import java.lang.reflect.Array;
-
 public class ArrayManipulator {
     static int arrayElementSum(String[][] array) throws MyArraySizeException, MyArrayDataException {
-        for (String[] strings : array) {
-            if (array.length != 4 || strings.length != 4) {
-                throw new MyArraySizeException();
+        if (array.length != 4) {
+            throw new MyArraySizeException();
+        } else {
+            for (String[] strings : array) {
+                if (strings.length != 4) {
+                    throw new MyArraySizeException();
+                }
             }
         }
         int sum = 0;
