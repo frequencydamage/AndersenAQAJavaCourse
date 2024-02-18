@@ -4,21 +4,17 @@ import java.util.*;
 
 public class ArrayWordsManipulator {
     public static List<String> getUniqueWords(String[] array) {
-        List<String> uniqueWords = new ArrayList<>();
-        for (int i = 0; i < array.length; i++) {
-            String uniqWord = array[i];
-            boolean isUnique = true;
-            for (int j = 0; j < array.length; j++) {
-                if (i != j && array[j].equals(uniqWord)) {
-                    isUnique = false;
-                    break;
-                }
-            }
-            if (isUnique) {
-                uniqueWords.add(uniqWord);
+        Map<String, Integer> uniqueWords = new HashMap<>();
+        for (String word : array) {
+            uniqueWords.put(word, uniqueWords.getOrDefault(word, 0) + 1);
+        }
+        List<String> uniqueWordsList = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : uniqueWords.entrySet()) {
+            if (entry.getValue() == 1) {
+                uniqueWordsList.add(entry.getKey());
             }
         }
-        return uniqueWords;
+        return uniqueWordsList;
     }
 
     public static void getWordsCount(String[] array) {
