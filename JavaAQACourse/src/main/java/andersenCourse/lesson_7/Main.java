@@ -9,7 +9,7 @@ public class Main {
                 {250, 200, 123},
                 {300, 340, 500}
         };
-        File file = new File("/Users/frequencydamage/Documents/Andersen Course Java AQA/lesson8.csv"); //Your file-path
+        File file = new File("/Users/frequencydamage/Documents/Andersen Course Java AQA/lesson8.csv");
         AppData appData = new AppData(header, data, file);
         appData.save();
         appData.load();
