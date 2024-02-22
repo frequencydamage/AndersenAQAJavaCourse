@@ -1,4 +1,4 @@
-package jj;
+package andersenCourse.lesson_7;
 
 import java.io.File;
 
